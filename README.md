@@ -18,7 +18,7 @@ Main dependencies (pinned in [`requirements.txt`](requirements.txt), full detail
 |---|---|
 | NumPy | 2.4.6 |
 | pandas | 3.0.3 |
-| scikit-learn | 1.8.0 (models trained with 1.5.2) |
+| scikit-learn | 1.5.2 |
 | RDKit | 2025.9.3 |
 | PyTorch | 2.9.1 (CPU build) |
 | PyTorch Geometric | 2.7.0 |
