@@ -29,7 +29,7 @@ pip install -r requirements.txt
 | NumPy | 2.4.6 | all tools |
 | pandas | 3.0.3 | all tools |
 | SciPy | 1.17.1 | dependency of scikit-learn |
-| scikit-learn | 1.8.0 | flavor, target-organ, toxicity inference; matrix evaluation |
+| scikit-learn | 1.5.2 | flavor, target-organ, toxicity inference; matrix evaluation |
 | RDKit | 2025.9.3 | Morgan fingerprint generation (flavor, toxicity) |
 | PyTorch | 2.9.1 (CPU build) | drug-pair matrix (GCN model) |
 | PyTorch Geometric | 2.7.0 | drug-pair matrix (GCNConv, negative sampling) |
@@ -41,16 +41,14 @@ pip install -r requirements.txt
 The deployment server uses the CPU-only build of PyTorch (`torch 2.9.1+cpu`); no GPU
 is required for any of the four tools.
 
-## Model files and scikit-learn compatibility
+## Model files and scikit-learn version
 
-The serialized random-forest models were trained with **scikit-learn 1.5.2**
-(e.g., `taste_model.pkl` for flavor prediction). Inference has been validated under
-scikit-learn 1.8.0 and 1.9.0: the models load and predict correctly, although
-scikit-learn prints an `InconsistentVersionWarning` when the installed version
-differs from the training version. To reproduce the training-time environment
-exactly, install `scikit-learn==1.5.2` in a dedicated environment; to reproduce the
-published web-service outputs, the pinned `scikit-learn==1.8.0` in
-`requirements.txt` is what the deployment server runs.
+The serialized random-forest models (e.g., `taste_model.pkl` for flavor prediction)
+were trained with **scikit-learn 1.5.2**, and inference is run with the **same
+version** (`scikit-learn==1.5.2`, as pinned in `requirements.txt`). Using one
+consistent version for both training and inference avoids scikit-learn's
+`InconsistentVersionWarning` and eliminates any cross-version pickle compatibility
+concerns, so results are reproducible exactly.
 
 ## Determinism of the drug-pair matrix tool
 

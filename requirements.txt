@@ -16,7 +16,7 @@
 numpy==2.4.6
 pandas==3.0.3
 scipy==1.17.1
-scikit-learn==1.8.0
+scikit-learn==1.5.2   # matches the version used to train the serialized models (.pkl)
 joblib==1.5.3
 
 # --- cheminformatics (flavor & toxicity tools) ---
