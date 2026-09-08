@@ -1,0 +1,35 @@
+# AIPP — unified Python environment for the four prediction tools
+# (Flavor / Target organ / Drug pair matrix / Toxicity)
+#
+# Python 3.12 required.
+#   - Deployment server (Ubuntu, CPU-only): Python 3.12.12
+#   - Also verified end-to-end on:          Python 3.12.5 (Windows)
+#
+# Install:
+#   pip install -r requirements.txt
+#
+# Note: the deployment server runs the CPU build of PyTorch (torch 2.9.1+cpu).
+# On Linux/Windows, `pip install torch==2.9.1` installs the CPU build by default;
+# for GPU support install torch from the official CUDA index instead.
+
+# --- scientific stack ---
+numpy==2.4.6
+pandas==3.0.3
+scipy==1.17.1
+scikit-learn==1.8.0
+joblib==1.5.3
+
+# --- cheminformatics (flavor & toxicity tools) ---
+rdkit==2025.9.3
+
+# --- graph / deep learning (drug-pair matrix tool) ---
+torch==2.9.1
+torch-geometric==2.7.0
+networkx==3.6.1
+python-louvain==0.16
+
+# --- plotting & utilities ---
+matplotlib==3.10.8
+seaborn==0.13.2
+tqdm==4.67.1
+openpyxl==3.1.5
