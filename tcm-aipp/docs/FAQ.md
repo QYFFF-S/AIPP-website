@@ -1115,33 +1115,36 @@ For users with more advanced analytical requirements, TCM-AIPP offers a straight
 </p>
 
 **For TCM Target Organ Prediction**
+
 <p style={{ textAlign: "justify", textIndent: "2em" }}>
-Please enter the Official gene symbol or Entrez ID for the query in order to proceed with this command. 
+Please enter the official gene symbol or Entrez ID for the query.
 </p>
 
-<p style={{ textAlign: "justify"}}>
-  Example: 
-  <pre><code>python tcmaipp_api.py -m m1 -o output.csv Target</code></pre>
+<p style={{ textAlign: "justify" }}>
+  Example:
+  <pre><code>python tcmaipp_api.py -m organ -o output.csv Target</code></pre>
 </p>
 
 **For TCM Flavor Prediction**
+
 <p style={{ textAlign: "justify", textIndent: "2em" }}>
-Please enter the SMILES strings for the query in order to proceed with this command. 
+Please enter the SMILES string for the query.
 </p>
 
 <p style={{ textAlign: "justify" }}>
-  Example: 
-  <pre><code>python tcmaipp_api.py -m m2 -o output.csv SMILES</code></pre>
+  Example:
+  <pre><code>python tcmaipp_api.py -m flavor -o output.csv "SMILES"</code></pre>
 </p>
 
 **For TCM Toxicity Prediction**
+
 <p style={{ textAlign: "justify", textIndent: "2em" }}>
-Please enter the SMILES strings for the query in order to proceed with this command. 
+Please enter the SMILES string for the query.
 </p>
 
 <p style={{ textAlign: "justify" }}>
-  Example: 
-  <pre><code>python tcmaipp_api.py -m m3 -o output.csv SMILES</code></pre>
+  Example:
+  <pre><code>python tcmaipp_api.py -m toxicity -o output.csv "SMILES"</code></pre>
 </p>
 
 ## 5. Acknowledgement
